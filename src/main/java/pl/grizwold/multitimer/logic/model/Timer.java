@@ -3,19 +3,14 @@ package pl.grizwold.multitimer.logic.model;
 import lombok.Builder;
 import lombok.Value;
 
+import java.time.LocalDateTime;
+import java.util.UUID;
+
 @Value
 @Builder
 public class Timer {
-    private Long id;
+    private UUID id;
     private String name;
-    private long timestamp;
-    private boolean finished;
-
-    public LogicEvent update() {
-        return null;
-    }
-
-    public boolean isRunning() {
-        return !this.isFinished();
-    }
+    private LocalDateTime creation;
+    private LocalDateTime finish;
 }
