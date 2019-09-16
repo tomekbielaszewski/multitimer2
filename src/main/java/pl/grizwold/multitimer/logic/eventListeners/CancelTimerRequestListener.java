@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import pl.grizwold.multitimer.events.CancelTimerRequest;
 import pl.grizwold.multitimer.events.Event;
 import pl.grizwold.multitimer.events.TimerCancelledEvent;
-import pl.grizwold.multitimer.events.TimerNotFound;
+import pl.grizwold.multitimer.events.TimerNotFoundEvent;
 import pl.grizwold.multitimer.logic.TimerService;
 import pl.grizwold.multitimer.logic.model.TimerNotFoundException;
 
@@ -31,9 +31,8 @@ public class CancelTimerRequestListener {
                     .map(TimerCancelledEvent::new)
                     .get();
         } catch (TimerNotFoundException e) {
-            return Optional.of(cancelTimer)
-                    .map(CancelTimerRequest::getId)
-                    .map(TimerNotFound::new)
+            return Optional.of(e)
+                    .map(TimerNotFoundEvent::of)
                     .get();
         }
     }
