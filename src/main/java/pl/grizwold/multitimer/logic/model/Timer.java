@@ -13,4 +13,6 @@ public class Timer {
     private String name;
     private LocalDateTime creation;
     private LocalDateTime finish;
+    private boolean finished;
+    private boolean paused;
 }
