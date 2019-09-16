@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import pl.grizwold.multitimer.events.*;
 import pl.grizwold.multitimer.logic.TimerService;
 import pl.grizwold.multitimer.logic.model.Timer;
-import pl.grizwold.multitimer.logic.model.TimerNotFoundException;
+import pl.grizwold.multitimer.logic.exception.TimerNotFoundException;
 
 import java.util.Optional;
 

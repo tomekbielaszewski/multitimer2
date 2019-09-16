@@ -2,7 +2,7 @@ package pl.grizwold.multitimer.events;
 
 import lombok.Getter;
 import lombok.NonNull;
-import pl.grizwold.multitimer.logic.model.TimerNotFoundException;
+import pl.grizwold.multitimer.logic.exception.TimerNotFoundException;
 
 import java.util.UUID;
 

@@ -1,4 +1,4 @@
-package pl.grizwold.multitimer.logic.model;
+package pl.grizwold.multitimer.logic.exception;
 
 import lombok.Value;
 
