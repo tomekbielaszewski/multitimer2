@@ -1,3 +1,8 @@
 @startuml
 UI <- Logic: TimerFinished
+alt Successful
+UI -> Logic: TimerMarkedAsFinished
+else Failure
+Logic -[#red]> UI: TimerNotExist
+end
 @enduml
