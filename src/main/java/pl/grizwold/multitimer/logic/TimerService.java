@@ -36,4 +36,8 @@ public class TimerService {
     public Timer extend(long durationAdded, UUID id) {
         return null;
     }
+
+    public Timer shorten(long durationSubtracted, UUID id) {
+        return null;
+    }
 }
