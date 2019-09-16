@@ -1,6 +1,6 @@
 @startuml
 UI -> Logic: NewTimerRequest
 alt Successful
-Logic -> UI: TimerCreated
+Logic -> UI: TimerStarted
 end
 @enduml
