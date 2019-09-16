@@ -32,4 +32,8 @@ public class TimerService {
         this.timerDao.stop(uuid);
         return uuid;
     }
+
+    public Timer extend(long durationAdded, UUID id) {
+        return null;
+    }
 }
