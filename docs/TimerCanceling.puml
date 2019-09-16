@@ -1,0 +1,8 @@
+@startuml
+UI -> Logic: CancelTimerRequest
+alt Successful
+Logic -> UI: TimerCancelled
+else Failure
+Logic -[#red]> UI: TimerNotExist
+end
+@enduml

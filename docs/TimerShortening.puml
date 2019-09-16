@@ -1,0 +1,8 @@
+@startuml
+UI -> Logic: ShortenTimerRequest
+alt Successful
+Logic -> UI: TimerFinishDateChanged
+else Failure
+Logic -[#red]> UI: TimerNotExist
+end
+@enduml
