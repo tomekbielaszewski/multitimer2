@@ -3,9 +3,11 @@ package pl.grizwold.multitimer.logic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 import pl.grizwold.multitimer.events.TimerFinishedEvent;
 import pl.grizwold.multitimer.logic.model.Timer;
 
+@Component
 public class TimerExpirationJob {
     private static final long UPDATE_RATE = 200;
 
