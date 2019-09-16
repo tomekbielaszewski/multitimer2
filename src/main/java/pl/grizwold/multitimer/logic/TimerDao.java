@@ -20,7 +20,15 @@ public class TimerDao {
 
     }
 
-    void stop(UUID uuid) {
+    void stop(UUID id) {
+
+    }
+
+    public Timer get(UUID id) {
+        return null;
+    }
+
+    public void markAsPaused(boolean b, UUID id) {
 
     }
 }
