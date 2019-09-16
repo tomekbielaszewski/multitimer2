@@ -18,6 +18,9 @@ Application is fully event driven.
 ## Pausing timer
 ![pause-timer-flow](./docs/img/TimerPausing.png)
 
+## Resuming timer
+![pause-timer-flow](./docs/img/TimerResuming.png)
+
 ## Extending timer
 ![extend-timer-flow](./docs/img/TimerExtending.png)
 

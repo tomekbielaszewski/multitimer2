@@ -1,0 +1,9 @@
+@startuml
+UI -> Logic: ResumeTimerRequest
+alt Successful
+Logic -> UI: TimerResumed
+else Failure
+Logic -[#red]> UI: TimerNotExist
+Logic -[#red]> UI: TimerAlreadyFinished
+end
+@enduml
