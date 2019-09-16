@@ -1,5 +1,6 @@
 package pl.grizwold.multitimer.logic.eventListeners;
 
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -24,7 +25,7 @@ public class NewTimerRequestListener {
     }
 
     @EventListener
-    public Event execute(NewTimerRequest newTimerRequest) {
+    public Event execute(@NonNull NewTimerRequest newTimerRequest) {
         return Optional.of(newTimerRequest)
                 .map(this::toTimer)
                 .map(this.timerService::createTimer)

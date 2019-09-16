@@ -1,5 +1,6 @@
 package pl.grizwold.multitimer.logic.eventListeners;
 
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -22,7 +23,7 @@ public class CancelTimerRequestListener {
     }
 
     @EventListener
-    public Event execute(CancelTimerRequest cancelTimer) {
+    public Event execute(@NonNull CancelTimerRequest cancelTimer) {
         try {
             return Optional.of(cancelTimer)
                     .map(CancelTimerRequest::getId)
