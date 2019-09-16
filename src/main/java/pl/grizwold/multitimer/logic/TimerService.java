@@ -20,8 +20,8 @@ public class TimerService {
         return timerDao.getExpired();
     }
 
-    public UUID createTimer(Timer timer) {
-        return timerDao.save(timer);
+    public Timer createTimer(UUID id, String name, long duration) {
+        return null;
     }
 
     public void finishTimer(UUID id) {

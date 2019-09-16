@@ -10,10 +10,7 @@ import pl.grizwold.multitimer.events.TimerStartedEvent;
 import pl.grizwold.multitimer.logic.TimerService;
 import pl.grizwold.multitimer.logic.model.Timer;
 
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.Optional;
-import java.util.UUID;
 
 @Component
 public class NewTimerRequestListener {
@@ -27,25 +24,23 @@ public class NewTimerRequestListener {
     @EventListener
     public Event execute(@NonNull NewTimerRequest newTimerRequest) {
         return Optional.of(newTimerRequest)
-                .map(this::toTimer)
-                .map(this.timerService::createTimer)
+                .map(this::createTimer)
                 .map(this::toTimerStartedEvent)
                 .get();
     }
 
-    private TimerStartedEvent toTimerStartedEvent(UUID id) {
+    private TimerStartedEvent toTimerStartedEvent(Timer timer) {
         return TimerStartedEvent.builder()
-                .id(id)
+                .id(timer.getId())
+                .finish(timer.getFinish())
                 .build();
     }
 
-    private Timer toTimer(NewTimerRequest newTimerRequest) {
-        LocalDateTime now = LocalDateTime.now();
-        return Timer.builder()
-                .id(newTimerRequest.getId())
-                .name(newTimerRequest.getName())
-                .creation(now)
-                .finish(now.plus(newTimerRequest.getDuration(), ChronoUnit.SECONDS))
-                .build();
+    private Timer createTimer(NewTimerRequest newTimerRequest) {
+        return timerService.createTimer(
+                newTimerRequest.getId(),
+                newTimerRequest.getName(),
+                newTimerRequest.getDuration()
+        );
     }
 }
