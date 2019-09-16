@@ -40,4 +40,8 @@ public class TimerService {
     public Timer shorten(long durationSubtracted, UUID id) {
         return null;
     }
+
+    public Timer rename(String name, UUID id) {
+        return null;
+    }
 }
