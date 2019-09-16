@@ -48,4 +48,8 @@ public class TimerService {
     public UUID pause(UUID uuid) {
         return null;
     }
+
+    public Timer resume(UUID uuid) {
+        return null;
+    }
 }
