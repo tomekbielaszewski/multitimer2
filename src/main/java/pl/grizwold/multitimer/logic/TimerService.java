@@ -44,4 +44,8 @@ public class TimerService {
     public Timer rename(String name, UUID id) {
         return null;
     }
+
+    public UUID pause(UUID uuid) {
+        return null;
+    }
 }
