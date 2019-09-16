@@ -28,9 +28,9 @@ import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.twinkle.style.
 import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.twinkle.window.GlassPane;
 import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.twinkle.window.IPosition;
 import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.twinkle.window.Positions;
-import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.window.translucentandshaped.ITranslucentAndShapedWindowApi;
-import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.window.translucentandshaped.Translucency;
-import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.window.translucentandshaped.TranslucentAndShapedWindowApiFactory;
+import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.twinkle.window.translucentandshaped.ITranslucentAndShapedWindowApi;
+import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.twinkle.window.translucentandshaped.Translucency;
+import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.twinkle.window.translucentandshaped.TranslucentAndShapedWindowApiFactory;
 
 import javax.swing.*;
 import java.awt.*;

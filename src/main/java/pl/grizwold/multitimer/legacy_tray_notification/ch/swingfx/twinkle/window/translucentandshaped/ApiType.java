@@ -13,7 +13,7 @@
  * license, as set out in licenses/commercial.txt.
  */
 
-package pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.window.translucentandshaped;
+package pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.twinkle.window.translucentandshaped;
 
 /**
  * Enum off all supported API types for translucent and shaped windows<br />

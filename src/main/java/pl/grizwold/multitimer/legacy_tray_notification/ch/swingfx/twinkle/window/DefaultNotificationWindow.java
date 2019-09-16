@@ -31,9 +31,9 @@ import javax.swing.plaf.basic.BasicTextAreaUI;
 import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.text.TextUtil;
 import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.twinkle.style.INotificationStyle;
 import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.twinkle.style.background.BackgroundPainterPanel;
-import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.window.translucentandshaped.ITranslucentAndShapedWindowApi;
-import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.window.translucentandshaped.Translucency;
-import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.window.translucentandshaped.TranslucentAndShapedWindowApiFactory;
+import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.twinkle.window.translucentandshaped.ITranslucentAndShapedWindowApi;
+import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.twinkle.window.translucentandshaped.Translucency;
+import pl.grizwold.multitimer.legacy_tray_notification.ch.swingfx.twinkle.window.translucentandshaped.TranslucentAndShapedWindowApiFactory;
 
 /**
  * The default notification window layout.<br />
