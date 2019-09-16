@@ -8,15 +8,19 @@ import java.util.UUID;
 
 @Service
 public class TimerDao {
-    public List<Timer> getExpired() {
+    List<Timer> getExpired() {
         return null;
     }
 
-    public UUID save(Timer timer) {
+    UUID save(Timer timer) {
         return null;
     }
 
-    public void markAsFinished(UUID id) {
+    void markAsFinished(UUID id) {
+
+    }
+
+    void stop(UUID uuid) {
 
     }
 }

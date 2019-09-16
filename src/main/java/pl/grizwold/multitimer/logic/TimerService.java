@@ -16,7 +16,7 @@ public class TimerService {
         this.timerDao = timerDao;
     }
 
-    public List<Timer> getExpiredTimers() {
+    List<Timer> getExpiredTimers() {
         return timerDao.getExpired();
     }
 
@@ -26,5 +26,10 @@ public class TimerService {
 
     public void finishTimer(UUID id) {
         this.timerDao.markAsFinished(id);
+    }
+
+    public UUID cancelTimer(UUID uuid) {
+        this.timerDao.stop(uuid);
+        return uuid;
     }
 }
