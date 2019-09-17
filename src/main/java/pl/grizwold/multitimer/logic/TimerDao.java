@@ -34,6 +34,7 @@ public class TimerDao {
 
     void stop(UUID id) {
         get(id).setFinish(LocalDateTime.now());
+        markAsFinished(id);
     }
 
     public void markAsPaused(boolean paused, UUID id) {
