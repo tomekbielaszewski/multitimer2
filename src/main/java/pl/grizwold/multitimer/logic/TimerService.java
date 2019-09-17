@@ -50,9 +50,10 @@ public class TimerService {
         this.timerDao.markAsFinished(id);
     }
 
-    public UUID cancelTimer(UUID uuid) {
-        this.timerDao.stop(uuid);
-        return uuid;
+    public UUID cancelTimer(UUID id) {
+        this.timerDao.stop(id);
+        this.finishTimer(id);
+        return id;
     }
 
     public Timer extend(long durationAdded, UUID id) {
