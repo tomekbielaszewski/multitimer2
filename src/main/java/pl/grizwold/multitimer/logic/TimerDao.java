@@ -19,6 +19,7 @@ public class TimerDao {
         return timers.stream()
                 .filter(t -> now.isAfter(t.getFinish()))
                 .filter(t -> !t.isFinished())
+                .filter(t -> !t.isPaused())
                 .collect(Collectors.toList());
     }
 
