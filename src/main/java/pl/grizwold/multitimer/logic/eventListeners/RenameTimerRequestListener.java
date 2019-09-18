@@ -1,6 +1,7 @@
 package pl.grizwold.multitimer.logic.eventListeners;
 
 import lombok.NonNull;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -11,6 +12,7 @@ import pl.grizwold.multitimer.logic.exception.TimerNotFoundException;
 
 import java.util.Optional;
 
+@Slf4j
 @Component
 public class RenameTimerRequestListener {
     private final TimerService timerService;
@@ -22,6 +24,7 @@ public class RenameTimerRequestListener {
 
     @EventListener
     public Event execute(@NonNull RenameTimerRequest renameTimerRequest) {
+        log.info("Received event: {}", getClass().getSimpleName());
         try {
             return Optional.of(renameTimerRequest)
                     .map(request -> this.timerService.rename(request.getName(), request.getId()))
