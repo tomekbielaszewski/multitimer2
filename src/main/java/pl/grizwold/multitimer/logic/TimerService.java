@@ -1,5 +1,6 @@
 package pl.grizwold.multitimer.logic;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import java.util.UUID;
 
 import static java.time.temporal.ChronoUnit.SECONDS;
 
+@Slf4j
 @Service
 public class TimerService {
     private final TimerDao timerDao;
@@ -35,6 +37,8 @@ public class TimerService {
             name = createName(id, duration);
         }
 
+        log.info("Creating timer {}", name);
+
         Timer timer = Timer.builder()
                 .id(id)
                 .name(name)
@@ -47,10 +51,12 @@ public class TimerService {
     }
 
     public void finishTimer(UUID id) {
+        log.info("Timer {} finished", id);
         this.timerDao.markAsFinished(id);
     }
 
     public UUID cancelTimer(UUID id) {
+        log.info("Timer {} cancelled", id);
         this.timerDao.stop(id);
         this.finishTimer(id);
         return id;
@@ -58,6 +64,8 @@ public class TimerService {
 
     public Timer extend(long durationAdded, UUID id) {
         Timer timer = timerDao.get(id);
+
+        log.info("Timer {} extended by {} seconds", timer.getName(), durationAdded);
 
         LocalDateTime newFinishDate = timer.getFinish().plus(durationAdded, SECONDS);
         timer.setFinish(newFinishDate);
@@ -70,6 +78,8 @@ public class TimerService {
     public Timer shorten(long durationSubtracted, UUID id) {
         Timer timer = timerDao.get(id);
 
+        log.info("Timer {} shortened by {} seconds", timer.getName(), durationSubtracted);
+
         LocalDateTime newFinishDate = timer.getFinish().minus(durationSubtracted, SECONDS);
         timer.setFinish(newFinishDate);
 
@@ -80,6 +90,8 @@ public class TimerService {
 
     public Timer rename(String name, UUID id) {
         Timer timer = timerDao.get(id);
+
+        log.info("Timer {} renamed to {}", timer.getName(), name);
 
         if (Strings.isBlank(name)) {
             long duration = timer.getCreation().until(timer.getFinish(), SECONDS);
@@ -94,8 +106,9 @@ public class TimerService {
 
     public UUID pause(UUID id) {
         timerDao.markAsPaused(true, id);
-
         Timer timer = timerDao.get(id);
+
+        log.info("Timer {} paused", timer.getName());
 
         LocalDateTime now = LocalDateTime.now();
         long durationLeft = now.until(timer.getFinish(), SECONDS);
@@ -110,9 +123,10 @@ public class TimerService {
 
     public Timer resume(UUID id) {
         timerDao.markAsPaused(false, id);
-
         Pause pause = pauseDao.get(id);
         Timer timer = timerDao.get(id);
+
+        log.info("Timer {} resumed", timer.getName());
 
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime newFinishDate = now.plus(pause.getDurationLeft(), SECONDS);
