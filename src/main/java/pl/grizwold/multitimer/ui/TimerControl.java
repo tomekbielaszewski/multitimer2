@@ -3,6 +3,9 @@ package pl.grizwold.multitimer.ui;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
+import pl.grizwold.multitimer.events.NewTimerRequest;
+
+import java.util.UUID;
 
 @Component
 public class TimerControl {
@@ -14,6 +17,7 @@ public class TimerControl {
     }
 
     public void newTimer() {
+        eventPublisher.publishEvent(NewTimerRequest.builder().duration(5).id(UUID.randomUUID()).build());
     }
 
     public void cancelTimer() {
