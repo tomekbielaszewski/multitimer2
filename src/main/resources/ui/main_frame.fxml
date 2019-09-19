@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #F4F4F5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="500.0" prefWidth="400.0">
+         <children>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <content>
+                  <VBox>
+                     <children>
+                        <StackPane prefHeight="25.0">
+                           <children>
+                              <ProgressBar prefWidth="380.0" progress="0.4">
+                                 <contextMenu>
+                                    <ContextMenu>
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Cancel" />
+                                          <MenuItem mnemonicParsing="false" text="Rename" />
+                                          <MenuItem mnemonicParsing="false" text="Extend" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                                 <StackPane.margin>
+                                    <Insets left="70.0" />
+                                 </StackPane.margin>
+                              </ProgressBar>
+                              <Text disable="true" fill="#1e1e1e" strokeType="OUTSIDE" strokeWidth="0.0" text="Kopalnia metalu">
+                                 <StackPane.margin>
+                                    <Insets left="35.0" />
+                                 </StackPane.margin>
+                              </Text>
+                              <Text disable="true" fill="#1e1e1e" strokeType="OUTSIDE" strokeWidth="0.0" text="01:15:56">
+                                 <StackPane.margin>
+                                    <Insets right="310.0" />
+                                 </StackPane.margin>
+                              </Text>
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="25.0">
+                           <children>
+                              <ProgressBar prefWidth="380.0" progress="0.46">
+                                 <contextMenu>
+                                    <ContextMenu>
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" text="Cancel" />
+                                          <MenuItem mnemonicParsing="false" text="Rename" />
+                                          <MenuItem mnemonicParsing="false" text="Extend" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                                 <StackPane.margin>
+                                    <Insets left="70.0" />
+                                 </StackPane.margin>
+                              </ProgressBar>
+                              <Text disable="true" fill="#1e1e1e" strokeType="OUTSIDE" strokeWidth="0.0" text="Gotowanie jajek">
+                                 <StackPane.margin>
+                                    <Insets left="35.0" />
+                                 </StackPane.margin>
+                              </Text>
+                              <Text disable="true" fill="#1e1e1e" strokeType="OUTSIDE" strokeWidth="0.0" text="01:10:56">
+                                 <StackPane.margin>
+                                    <Insets right="310.0" />
+                                 </StackPane.margin>
+                              </Text>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
