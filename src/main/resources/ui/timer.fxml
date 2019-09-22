@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="25.0" minHeight="25.0" prefHeight="25.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ProgressBar id="progress" prefWidth="1000.0" progress="0.79" StackPane.alignment="CENTER_LEFT">
+         <contextMenu>
+            <ContextMenu>
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Cancel" />
+                  <MenuItem mnemonicParsing="false" text="Rename" />
+                  <MenuItem mnemonicParsing="false" text="Extend" />
+               </items>
+            </ContextMenu>
+         </contextMenu>
+         <StackPane.margin>
+            <Insets left="70.0" right="5.0" />
+         </StackPane.margin>
+      </ProgressBar>
+      <Text id="name" disable="true" fill="#1e1e1e" strokeType="OUTSIDE" strokeWidth="0.0" text="Moj timer" StackPane.alignment="CENTER">
+         <StackPane.margin>
+            <Insets left="50.0" />
+         </StackPane.margin>
+      </Text>
+      <Text id="remaining" disable="true" fill="#1e1e1e" strokeType="OUTSIDE" strokeWidth="0.0" text="00:32:56" StackPane.alignment="CENTER_LEFT">
+         <StackPane.margin>
+            <Insets left="10.0" />
+         </StackPane.margin>
+      </Text>
+   </children>
+</StackPane>
