@@ -1,4 +1,4 @@
-package pl.grizwold.multitimer.logic;
+package pl.grizwold.multitimer.logic.dao;
 
 import org.springframework.stereotype.Service;
 import pl.grizwold.multitimer.logic.model.Pause;

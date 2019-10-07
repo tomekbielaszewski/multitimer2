@@ -1,4 +1,4 @@
-package pl.grizwold.multitimer.logic;
+package pl.grizwold.multitimer.logic.dao;
 
 import org.springframework.stereotype.Service;
 import pl.grizwold.multitimer.logic.exception.TimerNotFoundException;
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class TimerDao {
     private List<Timer> timers = new ArrayList<>();
 
-    List<Timer> getExpired() {
+    public List<Timer> getExpired() {
         LocalDateTime now = LocalDateTime.now();
         return timers.stream()
                 .filter(t -> now.isAfter(t.getFinish()))
@@ -23,16 +23,16 @@ public class TimerDao {
                 .collect(Collectors.toList());
     }
 
-    UUID save(Timer timer) {
+    public UUID save(Timer timer) {
         timers.add(timer);
         return timer.getId();
     }
 
-    void markAsFinished(UUID id) {
+    public void markAsFinished(UUID id) {
         get(id).setFinished(true);
     }
 
-    void stop(UUID id) {
+    public void stop(UUID id) {
         get(id).setFinish(LocalDateTime.now());
     }
 

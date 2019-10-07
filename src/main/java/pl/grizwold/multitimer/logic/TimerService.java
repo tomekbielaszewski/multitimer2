@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.grizwold.multitimer.logic.dao.PauseDao;
+import pl.grizwold.multitimer.logic.dao.TimerDao;
 import pl.grizwold.multitimer.logic.model.Pause;
 import pl.grizwold.multitimer.logic.model.Timer;
 
