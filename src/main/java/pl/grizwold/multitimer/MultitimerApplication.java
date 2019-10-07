@@ -12,7 +12,8 @@ public class MultitimerApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(MultitimerApplication.class, args);
         TimerControl control = context.getBean(TimerControl.class);
-        control.newTimer();
+        control.newTimer("testTimer", 5);
+        control.newTimer(null, 6);
     }
 }
 

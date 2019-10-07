@@ -3,7 +3,7 @@ package pl.grizwold.multitimer.ui;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
-import pl.grizwold.multitimer.events.NewTimerRequest;
+import pl.grizwold.multitimer.events.*;
 
 import java.util.UUID;
 
@@ -16,28 +16,38 @@ public class TimerControl {
         this.eventPublisher = eventPublisher;
     }
 
-    public void newTimer() {
-        eventPublisher.publishEvent(NewTimerRequest.builder().duration(5).id(UUID.randomUUID()).build());
+    public void newTimer(String name, long durationSeconds) {
+        NewTimerRequest newTimerRequest = new NewTimerRequest(UUID.randomUUID(), name, durationSeconds);
+        eventPublisher.publishEvent(newTimerRequest);
     }
 
-    public void cancelTimer() {
+    public void cancelTimer(UUID id) {
+        CancelTimerRequest cancelTimerRequest = new CancelTimerRequest(id);
+        eventPublisher.publishEvent(cancelTimerRequest);
     }
 
-    public void extendTimer() {
+    public void extendTimer(UUID id, long durationAdded) {
+        ExtendTimerRequest extendTimerRequest = new ExtendTimerRequest(id, durationAdded);
+        eventPublisher.publishEvent(extendTimerRequest);
     }
 
-    public void renameTimer() {
+    public void renameTimer(UUID id, String name) {
+        RenameTimerRequest renameTimerRequest = new RenameTimerRequest(id, name);
+        eventPublisher.publishEvent(renameTimerRequest);
     }
 
-    public void shortenTimer() {
+    public void shortenTimer(UUID id, long durationSubtracted) {
+        ShortenTimerRequest shortenTimerRequest = new ShortenTimerRequest(id, durationSubtracted);
+        eventPublisher.publishEvent(shortenTimerRequest);
     }
 
-    public void pauseTimer() {
+    public void pauseTimer(UUID id) {
+        PauseTimerRequest pauseTimerRequest = new PauseTimerRequest(id);
+        eventPublisher.publishEvent(pauseTimerRequest);
     }
 
-    public void resumeTimer() {
-    }
-
-    public void timerFinishedCallback() {
+    public void resumeTimer(UUID id) {
+        ResumeTimerRequest resumeTimerRequest = new ResumeTimerRequest(id);
+        eventPublisher.publishEvent(resumeTimerRequest);
     }
 }
